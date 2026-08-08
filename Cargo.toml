@@ -1,0 +1,17 @@
+[package]
+name = "wnwfx-worker"
+version = "1.0.0"
+edition = "2021"
+description = "Order processing worker for the wnwfx fixture system"
+
+[dependencies]
+anyhow = "1"
+axum = "0.7"
+futures-lite = "2"
+lapin = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sqlx = { version = "0.8", default-features = false, features = ["runtime-tokio", "tls-rustls", "postgres"] }
+tokio = { version = "1", features = ["macros", "rt-multi-thread", "signal"] }
+tracing = "0.1"
+tracing-subscriber = "0.3"
